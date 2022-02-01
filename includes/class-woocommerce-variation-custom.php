@@ -3,7 +3,6 @@
 final class Woocommerce_Variation_Custom
 {
     private $version = "1.0.0";
-
     protected static $_instance = null;
 
     public static function instance() {
@@ -13,9 +12,12 @@ final class Woocommerce_Variation_Custom
         return self::$_instance;
     }
 
-    private function __constructor() {
+    public function __construct() {
         $this->define_constants();
         $this->includes();
+
+        add_action('acf/settings/url', array($this, 'set_acf_settings_url'));
+        add_filter('acf/settings/show_admin', array( $this, 'afc_hide_admin'));
     }
 
     public function check_requirements() {
@@ -23,8 +25,10 @@ final class Woocommerce_Variation_Custom
     }
 
     private function define_constants() {
-        $this->define( 'WVC_ABSPATH', dirname( WC_PLUGIN_FILE ) . '/' );
+        $this->define( 'WVC_ABSPATH', dirname( WVC_PLUGIN_FILE ) . '/' );
         $this->define( 'WVC_VERSION', $this->version );
+        $this->define( 'MY_ACF_PATH', WVC_ABSPATH . 'includes/acf/' );
+        $this->define( 'WVC_ACF_URL', plugin_dir_url(WVC_PLUGIN_FILE) . 'includes/acf/' );
     }
 
     private function define( $name, $value ) {
@@ -34,7 +38,7 @@ final class Woocommerce_Variation_Custom
     }
 
     private function includes() {
-
+        include_once( MY_ACF_PATH . 'acf.php' );
     }
 
     public function loading_plugin() {
@@ -43,5 +47,13 @@ final class Woocommerce_Variation_Custom
         }catch (Exception $e) {
             echo 'Exception: ',  $e->getMessage(), "\n";
         }
+    }
+
+    public function set_acf_settings_url( $url ) {
+        return WVC_ACF_URL;
+    }
+
+    function afc_hide_admin( $show_admin ) {
+        return false;
     }
 }
