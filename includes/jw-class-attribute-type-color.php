@@ -12,4 +12,8 @@ class Attribute_Type_Color extends Attribute_Type
         $this->name = 'Color';
         $this->id = 'color';
     }
+
+    public function create_costume_field() {
+
+    }
 }

@@ -18,11 +18,5 @@ if ( ! defined( 'WC_PLUGIN_FILE' ) ) {
 include_once dirname( WVC_PLUGIN_FILE ) . '/includes/functions.php';
 
 if ( ! class_exists( 'Woocommerce_Variation_Custom', false ) ) {
-    include_once dirname( WVC_PLUGIN_FILE ) . '/includes/class-woocommerce-variation-custom.php';
+    include_once dirname( WVC_PLUGIN_FILE ) . '/includes/jw-class-woocommerce-variation-custom.php';
 }
-
-function WVC() {
-    return Woocommerce_Variation_Custom::instance();
-}
-
-WVC()->check_requirements();
