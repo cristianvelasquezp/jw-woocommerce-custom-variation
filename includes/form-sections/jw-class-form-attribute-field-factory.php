@@ -1,5 +1,6 @@
 <?php
 
+namespace includes\formSection;
 
 class Form_Attribute_Field_Factory
 {
@@ -14,7 +15,7 @@ class Form_Attribute_Field_Factory
     private function create_form_section( $type ): Form_Section
     {
         if ($type = 'color') {
-            return new Form_Attribute_Color_Section();
+            return new \includes\formSection\Form_Attribute_Color_Section();
         }
     }
 }

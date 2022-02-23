@@ -1,5 +1,6 @@
 <?php
 
+namespace includes\formSection;
 
 abstract class Form_Section
 {

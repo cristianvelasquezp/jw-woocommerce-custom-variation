@@ -20,7 +20,7 @@ final class Woocommerce_Variation_Custom
         $this->includes();
 
         new \includes\Custom_Fields();
-        $field_color = new Form_Attribute_Field_Factory();
+        $field_color = new \includes\formSection\Form_Attribute_Field_Factory();
         $field_color->render('color');
 
         $this->attribute_types[] = new \includes\Attribute_Type_Color();

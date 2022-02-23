@@ -1,5 +1,6 @@
 <?php
 
+namespace includes\formSection;
 
 class Form_Attribute_Color_Section extends Form_Attribute_Section {
 

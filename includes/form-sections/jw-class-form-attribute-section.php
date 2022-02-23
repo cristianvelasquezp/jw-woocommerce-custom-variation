@@ -1,5 +1,6 @@
 <?php
 
+namespace includes\formSection;
 
 class Form_Attribute_Section extends Form_Section
 {
@@ -30,7 +31,7 @@ class Form_Attribute_Section extends Form_Section
         return $this->get_attribute($id)->slug;
     }
 
-    private function get_attribute($id): ?stdClass
+    private function get_attribute($id): ?\stdClass
     {
         return wc_get_attribute($id);
     }
