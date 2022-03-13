@@ -12,6 +12,7 @@ class Attribute_Color_Frontend
 
     public function render() {
         $attribute = $this->attribute;
+        echo "<div class='jw_attribute'>";
         foreach ($attribute['options'] as $color){
             $term = get_term($color);
             $Color_hex = get_field( "wvc_attribute_type_color22", $attribute['name'] . '_' . $color );
@@ -23,5 +24,6 @@ class Attribute_Color_Frontend
                                height: 20px;
                                margin-right: 10px'></span>";
         }
+        echo "</div>";
     }
 }

@@ -63,7 +63,8 @@ final class Woocommerce_Variation_Custom
         include_once WVC_ABSPATH . 'includes/jw-class-attribute-type-text.php';
         include_once WVC_ABSPATH . 'includes/jw-class-attribute-form.php';
         include_once WVC_ABSPATH . 'includes/jw-class-attribute-frontend-factory.php';
-        include_once WVC_ABSPATH . 'includes/jw-class-attribute-color-forntend.php';
+        include_once WVC_ABSPATH . 'includes/jw-class-attribute-color-frontend.php';
+        include_once WVC_ABSPATH . 'includes/jw-class-attribute-text-frontend.php';
     }
 
     public function loading_plugin() {

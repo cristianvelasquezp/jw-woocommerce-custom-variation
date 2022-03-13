@@ -23,5 +23,9 @@ class Attribute_Frontend_Factory
             $attribute_color = new \includes\Attribute_Color_Frontend($this->attribute);
             $attribute_color->render();
         }
+        if($attribute->type == 'text') {
+            $attribute_text = new \includes\Attribute_Text_Frontend($this->attribute);
+            $attribute_text->render();
+        }
     }
 }
