@@ -20,12 +20,25 @@ final class Woocommerce_Variation_Custom
         $this->includes();
 
         new \includes\Custom_Fields();
-        $field_color = new \includes\formSection\Form_Attribute_Field_Factory();
-        $field_color->render('color');
+        $attribute_from = new \includes\formSection\Form_Attribute_Field_Factory();
+        $attribute_from->render('color');
 
         $this->attribute_types[] = new \includes\Attribute_Type_Color();
         $this->attribute_types[] = new \includes\Attribute_Type_Text();
         $this->attribute_form = new \includes\Attribute_Form($this->attribute_types);
+
+        add_action('woocommerce_after_variations_table', array($this, 'create_variation'));
+    }
+
+    public function create_variation() {
+        global $product;
+        $attributes = $product->get_attributes();
+
+        foreach ( $attributes as $attribute => $value) {
+            new \includes\Attribute_Frontend_Factory($value);
+        }
+
+
     }
 
     private function define_constants() {
@@ -49,6 +62,8 @@ final class Woocommerce_Variation_Custom
         include_once WVC_ABSPATH . 'includes/jw-class-attribute-type-color.php';
         include_once WVC_ABSPATH . 'includes/jw-class-attribute-type-text.php';
         include_once WVC_ABSPATH . 'includes/jw-class-attribute-form.php';
+        include_once WVC_ABSPATH . 'includes/jw-class-attribute-frontend-factory.php';
+        include_once WVC_ABSPATH . 'includes/jw-class-attribute-color-forntend.php';
     }
 
     public function loading_plugin() {

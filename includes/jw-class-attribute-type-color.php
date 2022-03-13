@@ -13,7 +13,9 @@ class Attribute_Type_Color extends Attribute_Type
         $this->id = 'color';
     }
 
-    public function create_costume_field() {
+    public function render_html() {
 
     }
+
+
 }

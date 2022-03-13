@@ -7,7 +7,7 @@ class Form_Attribute_Color_Section extends Form_Attribute_Section {
     public function __construct()
     {
         $this->key = 'group_01';
-        $this->title = 'Prueba';
+        $this->title = '';
         $this->attribute_type = 'color';
 
     }

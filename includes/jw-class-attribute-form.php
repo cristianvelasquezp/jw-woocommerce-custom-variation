@@ -13,10 +13,13 @@ class Attribute_Form
         $this->attribute_types = $attribute_types;
 
         $this->create_types_field();
+
     }
 
     public function create_types_field() {
-        add_filter('product_attributes_type_selector', array($this, 'add_attribute_type'));
+        if (isset($_GET['post_type']) AND isset($_GET['page']) AND $_GET['post_type'] == 'product' AND $_GET['page'] == 'product_attributes') {
+            add_filter('product_attributes_type_selector', array($this, 'add_attribute_type'));
+        }
     }
 
     public function add_attribute_type(): array
