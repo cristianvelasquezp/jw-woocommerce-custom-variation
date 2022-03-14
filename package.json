@@ -1,0 +1,33 @@
+{
+  "name": "woocomerce-variation-custom",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "webpack": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cristianvelasquezp/jw-woocommerce-custom-variation.git"
+  },
+  "author": "Cristian Velasquez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cristianvelasquezp/jw-woocommerce-custom-variation/issues"
+  },
+  "homepage": "https://github.com/cristianvelasquezp/jw-woocommerce-custom-variation#readme",
+  "devDependencies": {
+    "@babel/core": "^7.17.5",
+    "@babel/preset-env": "^7.16.11",
+    "autoprefixer": "^10.4.2",
+    "babel-loader": "^8.2.3",
+    "css-loader": "^6.7.1",
+    "mini-css-extract-plugin": "^2.6.0",
+    "postcss": "^8.4.8",
+    "postcss-loader": "^6.2.1",
+    "sass": "^1.49.9",
+    "sass-loader": "^12.6.0",
+    "webpack": "^5.70.0",
+    "webpack-cli": "^4.9.2"
+  }
+}
